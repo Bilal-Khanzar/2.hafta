@@ -1,0 +1,179 @@
+using System;
+
+class Program
+{
+    static double CalculateTriangleArea()
+    {
+        Console.Write("Taban uzunluğunu giriniz: ");
+        double taban = Convert.ToDouble(Console.ReadLine());
+        
+        Console.Write("Yüksekliği giriniz: ");
+        double yukseklik = Convert.ToDouble(Console.ReadLine());
+
+        return (taban * yukseklik) / 2;
+    }
+
+    static void Main(string[] args)
+    {
+        double alan = CalculateTriangleArea();
+        Console.WriteLine($"Üçgenin alanı: {alan}");
+    }
+}
+
+
+
+2
+using System;
+
+class Program
+{
+    static int FindMaxValue(int[] array)
+    {
+        int max = array[0];
+        foreach (int value in array)
+        {
+            if (value > max)
+                max = value;
+        }
+        return max;
+    }
+
+    static void Main(string[] args)
+    {
+        int[] numbers = { 3, 7, 1, 15, 9 };
+        Console.WriteLine($"Dizideki en büyük değer: {FindMaxValue(numbers)}");
+    }
+}
+
+
+3
+using System;
+
+class Program
+{
+    static int CalculateSum(int a, int b) => a + b;
+    static double CalculateSum(double a, double b) => a + b;
+    static int CalculateSum(int a, int b, int c) => a + b + c;
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine(CalculateSum(3, 5));            // İki int
+        Console.WriteLine(CalculateSum(3.2, 4.8));       // İki double
+        Console.WriteLine(CalculateSum(1, 2, 3));        // Üç int
+    }
+}
+
+
+4
+using System;
+
+class Program
+{
+    static int Fibonacci(int n)
+    {
+        if (n <= 1)
+            return n;
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
+    }
+
+    static void Main(string[] args)
+    {
+        Console.Write("Bir sayı giriniz: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"Fibonacci({n}) = {Fibonacci(n)}");
+    }
+}
+
+
+5
+using System;
+
+class Program
+{
+    static double CalculateAverage(params double[] numbers)
+    {
+        double sum = 0;
+        foreach (double number in numbers)
+            sum += number;
+        return numbers.Length > 0 ? sum / numbers.Length : 0;
+    }
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine($"Ortalama: {CalculateAverage(4.5, 3.2, 6.8)}");
+    }
+}
+
+
+6
+using System;
+
+class Program
+{
+    static int SumFilteredValues(int[] array, int filter)
+    {
+        int sum = 0;
+        foreach (int value in array)
+        {
+            if (value > filter)
+                sum += value;
+        }
+        return sum;
+    }
+
+    static void Main(string[] args)
+    {
+        int[] numbers = { 5, 12, 8, 3, 15 };
+        Console.WriteLine($"Filtrelenmiş toplam: {SumFilteredValues(numbers, 10)}");
+    }
+}
+
+
+7
+
+using System;
+
+class Program
+{
+    static int CalculateAgeDifference(int age = 18)
+    {
+        return age - 18;
+    }
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine(CalculateAgeDifference());         // Varsayılan yaş
+        Console.WriteLine(CalculateAgeDifference(25));       // Belirtilmiş yaş
+    }
+}
+
+
+8
+\using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static List<string> FilterStrings(string[] array)
+    {
+        List<string> filtered = new List<string>();
+        foreach (string item in array)
+        {
+            if (item.Length > 5)
+                filtered.Add(item);
+        }
+        return filtered;
+    }
+
+    static void Main(string[] args)
+    {
+        string[] words = { "apple", "banana", "cherry", "kiwi", "watermelon" };
+        List<string> result = FilterStrings(words);
+        Console.WriteLine("Uzunluğu 5'ten büyük kelimeler:");
+        result.ForEach(Console.WriteLine);
+    }
+}
+
+
+9
+
